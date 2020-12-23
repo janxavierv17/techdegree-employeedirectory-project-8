@@ -39,19 +39,19 @@ function displayEmployees (employeedata){
 function displayModal (index){
     // This destructuring is really cool!
     let{name, dob, phone, email, location:{
-        city, streets, state, postcode
+        city, street, state, postcode
     }, picture } = employees[index];
 
     let date = new Date(dob.date);
     const modalHTML = `
         <img class="avatar" src="${picture.large}"/>
-        <div class="text-container>
+        <div class="text-container">
             <h2 class="name">${name.first}</h2>
             <p class="email">${email}</p>
             <p class="address">${city}</p>
             <hr/>
             <p>${phone}</p>
-            <p class="address">${streets}, ${state} ${postcode}</p>
+            <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
             <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
     `;

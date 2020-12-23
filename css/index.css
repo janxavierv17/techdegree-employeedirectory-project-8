@@ -1,5 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   position: relative;
+  padding: 25px;
+}
+
+header {
+  font-size: 24px;
+  letter-spacing: 0.1em;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid rgb(180, 180, 192);
+  margin: 15px;
+  background-color: white;
+}
+
+.email,
+.address {
+  color: #c0c0c0;
+  font-size: 0.7em;
+}
+
+.name {
+  font-size: 1em;
+  font-weight: bolder;
+}
+
+.text-container {
+  text-align: center;
+  margin: 20px;
+  line-height: 25px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin: 10px;
+  height: 100px;
+  width: 100px;
 }
 
 .overlay {
@@ -29,4 +80,30 @@ body {
 
 .hidden {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-container {
+    text-align: start;
+  }
+  .grid-container {
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(minmax(50px, 50px));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+  }
 }
